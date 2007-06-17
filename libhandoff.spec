@@ -1,3 +1,4 @@
+# TODO: fix linking (at pkgconfig level, needs gobject-2.0, not just glib-2.0)
 Summary:	Facilitate limiting a program to a single instance per user
 Summary(pl.UTF-8):	Biblioteka ograniczająca program do jednej instancji dla użytkownika
 Name:		libhandoff

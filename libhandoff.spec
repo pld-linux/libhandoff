@@ -1,13 +1,13 @@
-# TODO: fix linking (at pkgconfig level, needs gobject-2.0, not just glib-2.0)
 Summary:	Facilitate limiting a program to a single instance per user
 Summary(pl.UTF-8):	Biblioteka ograniczająca program do jednej instancji dla użytkownika
 Name:		libhandoff
-Version:	0.0.0.9128
+Version:	0.1
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	c5dab6c926b791451cc9f896c584a828
+Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.bz2
+# Source0-md5:	8ec44fda9476391ed372f835d5358fe8
+Patch0:		%{name}-link.patch
 URL:		http://gpe.linuxtogo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -48,7 +48,8 @@ Static libhandoff library.
 Statyczna biblioteka libhandoff.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
